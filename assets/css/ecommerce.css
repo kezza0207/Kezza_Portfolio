@@ -1,0 +1,458 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: rgb(5, 5, 5);
+    background-color: rgb(249, 248, 248);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 2.5em;
+    color: #333333;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+p {
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.app-mockup {
+    width: 300px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-right: 20px;
+}
+
+
+img {
+    height: 500px;
+    width: 900px;
+    display: block; /* Ensures the image is treated as a block-level element */
+    margin: 0 auto; /* Centers the image horizontally */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+img:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge the image */
+    filter: brightness(1.1);
+    /* Slightly increase the brightness */
+}
+
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+}
+
+.speech-bubble.left::before {
+    border-right-color: rgba(160, 158, 158, 0.7);
+    ;
+    left: -20px;
+    top: 10px;
+}
+
+.speech-bubble.right::before {
+    border-left-color: rgba(160, 158, 158, 0.7);
+    ;
+    right: -20px;
+    top: 10px;
+}
+
+/* Container for conversation bubbles */
+.conversation-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 50px;
+    border: solid 1px rgba(50, 50, 50, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.conversation-thread {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+
+/* General styling for message boxes */
+.message-box {
+    position: relative;
+    padding: 20px;
+    background-color:rgba(160, 158, 158, 0.7);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    line-height: 1.5;
+    width: 70%;
+    margin-bottom: 20px;
+}
+
+/* Bold titles in the message boxes */
+.message-box span {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Align messages to the left side */
+.message-box.left-side {
+    align-self: flex-start;
+}
+
+/* Align messages to the right side */
+.message-box.right-side {
+    align-self: flex-end;
+    background-color:rgba(160, 158, 158, 0.7);
+    /* Different background color for the right side */
+}
+
+/* Left-side speech bubble arrow */
+.message-box.left-side::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent rgba(160, 158, 158, 0.7) transparent transparent;
+}
+
+/* Right-side speech bubble arrow */
+.message-box.right-side::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgba(160, 158, 158, 0.7);
+}
+
+/* Optional hover effect */
+.message-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* role selection */
+.role-box {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 50px;
+    border: solid 1px rgba(50, 50, 50, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.role-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.role-section p {
+    background: rgba(160, 158, 158, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.role-section .speech-bubble::before {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+}
+
+.role-section .speech-bubble.left::before {
+    border-right-color: rgba(160, 158, 158, 0.7);
+    ;
+    left: -40px;
+    top: 20px;
+}
+
+.role-section .speech-bubble.right::before {
+    border-left-color: rgba(160, 158, 158, 0.7);
+    ;
+    right: -40px;
+    top: 20px;
+}
+
+.role-section p span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.image-ui-box {
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.new-section-box ul li {
+    margin-bottom: 10px;
+}
+
+/* Target Audience */
+.new-section-box {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 50px;
+    border: solid 1px rgba(50, 50, 50, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.new-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.new-section h2 {
+    font-size: 2em;
+    color: #090909;
+    margin-bottom: 20px;
+}
+
+.new-section p {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.new-section .speech-bubble {
+    position: relative;
+    background: rgba(160, 158, 158, 0.7);
+    ;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.new-section .speech-bubble::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+}
+
+.new-section .speech-bubble.left::before {
+    border-right-color: rgba(160, 158, 158, 0.7);
+    ;
+    left: -40px;
+    top: 20px;
+}
+
+.new-section .speech-bubble.right::before {
+    border-left-color: rgba(160, 158, 158, 0.7);
+    ;
+    right: -40px;
+    top: 20px;
+}
+
+
+/* user research */
+.image-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-column img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* initial design concept */
+/* Style for the initial-design container */
+.initial-design {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Style for the initial-design-text container */
+.initial-design-text {
+    flex: 1;
+}
+
+/* Style for the initial-design-visuals container */
+.initial-design-visuals {
+    flex: 1;
+}
+
+/* Style for the initial-design-text h3 heading */
+.initial-design-text h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Style for the initial-design-text ol list */
+.initial-design-text ol {
+    padding-left: 20px;
+}
+
+/* Style for the initial-design-text li items */
+.initial-design-text li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Style for the initial-design-text li spans */
+.initial-design-text li span {
+    font-weight: bold;
+}
+
+/* Style for the initial-design-visuals h3 heading */
+.initial-design-visuals h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Style for the initial-design-visuals divs */
+.initial-design-visuals div {
+    margin-bottom: 20px;
+}
+
+/* Style for the initial-design-visuals h4 heading */
+.initial-design-visuals h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Style for the initial-design-visuals img */
+.initial-design-visuals img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Sketches or wireframe */
+.new-section-box img {
+    max-height: 600px;
+    /* Adjust the height as needed */
+    width: 800px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.new-section-box img:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge the image */
+    filter: brightness(1.1);
+    /* Slightly increase the brightness */
+}
+
+.image-ui-box {
+    background-color: #ffffff;
+}
+
+/* Digital Wireframe */
+.wide-image {
+    width: 100% !important;
+    /* Ensure it overrides other CSS rules */
+}
+
+/* Low-Fidelity Prototype Styles */
+.low-fidelity-prototype .image-ui-box {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.low-fidelity-prototype .image-ui-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Usability Study */
+.usability-study {
+    max-width: 1200px;
+    width: 100%;
+    /* background-color: white; */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.usability-study-box {
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.usability-study-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hi-Fi prototype */
+.high-fidelity-prototype .image-ui-box {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.high-fidelity-prototype .image-ui-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== FOOTER =====*/
+.footer {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    font-weight: var(--font-semi);
+    padding: 2rem 0;
+}
+
+.footer__title {
+    font-size: 2rem;
+    margin-bottom: var(--mb-4);
+}
+
+.footer__social {
+    margin-bottom: var(--mb-4);
+}
+
+.footer__icon {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0 var(--mb-2);
+}
+
+.footer__copy {
+    font-size: var(--smaller-font-size);
+}
